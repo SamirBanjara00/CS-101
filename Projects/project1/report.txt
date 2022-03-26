@@ -1,0 +1,142 @@
+1. Enter the number of hours it took you to complete the project between
+   the <<< and >>> signs below (eg, <<<10>>>).
+
+   <<<6>>>
+   
+2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
+   between the <<< and >>> signs below (eg, <<<3>>>).
+
+   <<<1>>>
+
+3. Did you receive help from anyone? List their names, status (classmate,
+   CS110 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+
+   ...                ...          ...
+
+4. Provide a short description of how you approached each problem, issues you
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Day of the Week)
+      Approach: This was pretty simple, have 3 different integers as com,and line inputs that is designated,
+      m - month, d - day, and y - year. Then we use math operators and the inputs to assign variables year, month, and
+      x, a new number. We use d, month, and x to calculate dow.
+
+      Issues and resolution: changed y0 to year, x0 to x, m0 to month, and kept dow the same, because I do not know
+      how to write subscripts. later realized that the way I chose was the correct way
+
+
+   Problem 2 (Mercator Projection)
+      Approach: So this one required math functions like radians, sin, degrees, log that was not done in the
+      practice problems. But I used a website https://docs.python.org/3/library/math.html and went over a couple of math
+      functions to see how they worked. So we have two inputs that are latitude and longitude. I assigned the command
+      line inputs longitude and latitude. Then flipped longitude to the var x, and  var y was assigned
+      the math functions to compute the problem
+
+      Issues and resolution: I had a problem with the str(x) function, I don't understand why I need it. Hope to ask
+      this question in discussion session.The debugger told me I needed it, so I put it in. Initially I had
+      math.log((1 + math.degrees(math.sin(latitude))) / (1 - math.degrees(math.sin(latitude)))) / 2. I got that by
+      looking at math function on https://docs.python.org/3/library/math.html. Added math.radians that converted
+      degree to radians, realized I was supposed to put it inside the function first, then fixed parenthesis. Ran into
+      problem when writing print function. I did not know I was supposed to put str() value, I received the error ,
+      but I added str() not sure why will ask question in Si, discussion or class.
+      update professor went over this is class on thursday this week.
+
+   Problem 3 (Great Circle Distance)
+      Approach: I thought this was going to be simple since the last one used math functions. So I used
+      math.radians on the command line input functions, so I wouldn't have to write extra lines of code.
+      This subtracted my program of 4 lines of code. Used given math function and assigned it to var d. then var e was
+      assigned d * 6359 because the line was too long.
+
+
+      Issues and resolution: This was not the most changeling, but the most annoying to do.
+       Because I could not write the math function properly. I had different version on this problem trying to
+       fix the issue that gave the wrong output. But I found out that I confused the math function and the goal of the
+       program. I didn't need to add a math.Degrees because we want something
+        'representing the latitude and longitude in degrees'.
+       (6359.83 * math.acos((math.sin(math.radians(x1)) * math.sin(math.radians(((x2)))) +
+       (math.cos(math.radians(x1)) * math.cos(math.radians(x2)) * math.cos(math.radians(y1 - y2)))
+       this is the formula I had initially. Removed math.radians from indv variables.
+       Put it at beginning of string. I got frustrated while doing this.
+       I believe I have the right code, but it's not working. The math is not working.
+       Found solution I had d = math.degrees(d), but this reconverted the radians to degrees.
+
+   Problem 4 (Wind Chill)
+      Approach: This was a very simple program, so it didn't require much thinking beforehand.
+      We have t and v var that are command line arguments. Then we assign the variable w, math functions that use
+      t and v. We can now print the string w.
+
+      Issues and resolution: No issues on this program.
+
+   Problem 5 (Gravitational Force)
+      Approach: Like program #4 this was another easy program to write. Just had to follow directions in the pdf file.
+      First we have to accept input m1 and m2 and r as float command line arguments. Then assign a math formula to g
+      for gravity. Then calculate f, force, using all variable g, m1, m2, r. When printing the function, we convert f to
+      a string.
+
+      Issues and resolution: No issues
+
+   Problem 6 (Snell's Law)
+      Approach: This program required math.asin and math.radians which confuse me for some reason.
+      So, on initial approach I tried to pay attention to the formula given to me. First we accept 3 variables O1,
+      assign matn.radians since this is going inside of sin, n1 and n2 as float command line integers. Then we assign O2
+      math formula given, which uses the command line inputs. We also have to assign it the function math.degrees to
+      converts radians to degrees. Then we print the O2 variable after making it a string.
+
+      Issues and resolution: What is the difference between // and / ?
+       Was confused about this difference but i only used / for all of them.
+       Did not include math.asin in the initial writeup of program.
+       But second write up I used formula math.degrees(math.asin((n1 * math.sin(O1)) / n2))
+       Originally had O2 = math.degrees(O1 * (n2 / n1))
+       Fixed the formula into math.degrees(math.asin((n1 * math.sin(O1)) / n2))
+
+   Problem 7 (Gambler's Ruin)
+      Approach: Followed directions in pdf. Pretty easy. Unlike other this program required us to add a probability,
+       formula since the 'coin' used in program is uneven. we have 2 command line input integers, n1, n2, which are
+       the number of pennies, and  p which is accepted as a float. P is the probability. After that we assign a new
+       q, which will be the probability of the other guy winning. Then var p1 and p2, probability that player will
+       become penniless are assigned the math function using, p, q, n1, n2. I initially had the output in a double
+       parenthesis. But that wasn't printed as a string but as coordinate. However I used str() on both var p1 and p2.
+       Which also ended up working.
+
+      Issues and resolution: Not an issue but I needed to include parenthesis in function,
+       stdio.writeln((p1,p2)), for some reason.
+
+   Problem 8 (Waiting Time)
+      Approach: Easy formula to write. New function math.exp was needed,
+      so I went to math Function directory to view what it does. Once I learned the math function,
+      I Just read the directions and did the program. Accepted lambda as lam, and time as t which are float
+      command line argument. Then we assign the var p math.exp(-lam * t), which just calculates e to the power of
+      -lam * t. Because this is a float we have to convert it to a str in the std.writeln() function.
+
+      Issues and resolution: Used lam var for lambda var as a shortcut.
+
+   Problem 9 (Die Roll)
+      Approach: So since two die rolls are required, two functions are required.
+      The hint given to us stdrandom.unifromInt(1,n)  calculates two variables between 1 and n.
+      We used n as second number because directions as us to allow the user to pick a number of n sided die.
+      So theoretically the user can choose a 47 nth die
+      We have n as a command line integer input. then we have the var die1 and die2 that calculate a random number
+      between n and n+1 using the std.uniformInt function. We do +1 because the function starts count of at 0.
+
+      Issues and resolution: No issues easy money
+
+   Problem 10 (Three Sort)
+      Approach: This program required a little bit of thinking since there was multiple steps to the program.
+      We need to calculate the min, middle and max. The min, max function as pretty obvious to use.
+      Instead of writing the 3 different inputs i use a list that stored the variable x, y, z that was designated list 1,
+      and used that for the function max and min to calculate. I need to figure out an arethemetic formula to calculate
+      the middle using the inputs, max, and min. I used list_add - (min1 + max1). List _add is the sum of inputs.
+      Then we subtract the sum by the sum of min and max to calculate the median number.
+
+      Issues and resolution: No issues with this one. I did write a better formula in the comments,
+      that didn't use the 2 extra classification. The two extra lines made it easier to keep things organized for me,
+      which is why I submitted the code with more lines as final version.
+
+5. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+   ...

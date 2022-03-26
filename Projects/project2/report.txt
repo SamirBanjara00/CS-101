@@ -1,0 +1,119 @@
+1. Enter the number of hours it took you to complete the project between
+   the <<< and >>> signs below (eg, <<<10>>>).
+
+   <<< 10 >>>
+   
+2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
+   between the <<< and >>> signs below (eg, <<<3>>>).
+
+   <<< 4 >>>
+
+3. Did you receive help from anyone? List their names, status (classmate, 
+   CS110 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+
+   ...                ...          ...
+
+4. Provide a short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Wind Chill)
+      Approach: simple problem that required an if, elif, and else statements. So we have t and v as inputs, and a
+      formula for calculating w  is given. We have to calculate w. But we have 2 parameters. t can not be greater than 50
+      and v cannot be less than 3. So an if t > 50 statement checks out input t, first, then if is grater than 50 is
+      stops the process and prints "value of t must be ..." but if it is less than 50, we move on to elif, where it
+      checks if our v is greater than 3 or not. If satisfy elif v<= 3 then it print value of v must be ... else it
+      print w.
+
+      Issues and resolution: no issues
+
+   Problem 2 (Day of the Week)
+      Approach: So first we have to calculate year by subtracting 14 and m, divide that by 12, then subtract that by y.
+      Then we calculate x by adding year to year, dividing it by 4 and year. Then we would divide it again by 100 plus
+      year, then divide by 400. month is calculated, dow is calculated. We use the same system like grade.py. we use
+      if functions to see if dow is a certain variable, then if it satisfys that parameter, it prints the given day.
+
+      Issues and resolution: no issues
+
+   Problem 3 (Playing Card)
+      Approach: We first need to define constants of the deck of the cards. So, RANKS are defined corresponding to ranks,
+      between 2, 3 ... jack, queen ... Then the suits are defined corresping to suits of a deck of card between Clubs
+      and spades. Then we need to create the deck. We will write two for loop functions with each other. Since the
+      problem asks us to write the rank first, we will create that for loop first. We create list deck as a copy of list
+      RANKS and SUITS using loops. Then we use a for loop to look for rank in list RANKS, then within the RANKS,
+      we set for loop to look for suit in SUITS. Then we set variable card to equal rank + ' of ' + suit. deck will
+      the rank and suit selected. then we have to shuffle the deck, we use a std.random.uniformInt function between I
+      and n. we store thtn number in temp. Then change it to deck[i] from deck[r] then change it back to temp. this
+      changing or variable is what 'shuffles' the deck. We now have to draw a card. we use stdrandom.uniformInt to
+      calauet a random number between 0 and length of ranks and suits from list above. Once that is calculated we output
+      the variable.
+
+      Issues and resolution: no issues
+
+   Problem 4 (Root Finding)
+      Approach: we have k, c and epislon as inout variable. I dont know why we didnt make epislon a constant. But we
+      assign t = c, as a temp. we use a while fucntion, that as long the
+      absolute value of 1 - c / math.pow(t, k) > epsilon, is satsfied we can calcuate ft and ft1, and t. Then out put t.
+
+      Issues and resolution: had issue with decimal place.
+
+   Problem 5 (Greatest Common Divisor)
+      Approach: I thik i have the right function but i cant clauete right answer. we accepts inputs p and q.
+      Then use a while function that needs to satsfiy as long as when we divide p and q the remainder
+       isnt 0, then switch the variables. p = q and q = p % p. and output.
+
+      Issues and resolution: I cannot calculate the right answer. I did everything the direction asked me to.
+
+   Problem 6 (Fibonacci Number)
+      Approach:  store values for a, b, i and acccept the nth number we want to find. use while fucntion to set paramater
+      as long as I is less than or equal to n, then a will store the value of 1-0, and b will store the value 1+0
+      sequentially. Then we set increment for i by 1 until i equal n (which is the nth number. Then out put.
+
+      Issues and resolution: Initially had a, b, i set to number 1, 1, 3 respectively. with a = b and b = a + b. But
+      way did not work for me. It would not give me the right answer. It's the same thing, but changing the variables
+      initial amount helped.
+
+   Problem 7 (Sum of Powers)
+      Approach: Sum of powers is like harmonic.py. We have n and k as command line inputs, and total as 0. We use for
+      function, to calculate i with in 1 and n+1. within the for function, total will increment by i to the power of k
+      until we reach n in the range.
+
+      Issues and resolution: no issues.
+
+   Problem 8 (Dragon Curve)
+      Approach: After dragon curve is when things started getting sticky. So we have n which is a command line input
+      to the amount of direction we need to output. We assign dragon and backward dragon 'nograd' f. We use for
+      function to go through 1, to n+1. We then a temp vriable to hold dragon which is F. then we reassign variable
+      dragon from F to dragon + L + nograd. then we assign nograd to temp + r + nograd. We used temp because we had to
+      reassign dragon before this line. So nograd would out put f r f isnted of f l f. we go ove this for fucntion until
+      the range between 1 and n+1 is exhausted.
+
+      Issues and resolution: did not use temp in first draft. Used temp after looking at card.py.
+
+   Problem 9 (Perfect Numbers)
+      Approach: I followed direction but can not calcuate the answer. we have two for fucntion that have a range between
+      2, n and, 1, i//2. We will go though innter most for fucntion first, in whcih we use if fucntion to calcuate
+      the total. If the division of i and j equal is have no remaindr then we incriment the total by j. when the total
+      tallyed up equal i, then fucntion ends and we calcaute i.
+
+      Issues and resolution: cannot solve
+
+   Problem 10 (Ramanujan Numbers)
+      Approach: We have 4 variables a, b, c, d in which we store variable. I only had a = 1 so, the fucntion could start
+      and set b, c, d to 0. 4 nest while loops allow dor 4 paramter that need to be satsfyed. wintin our innermost while
+      loop is where we use an if fucntio, that calcuates
+      if math.pow(a, 3) + math.pow(b, 3) == math.pow(c, 3) + math.pow(d, 3):
+      if the function is stasfyed, then we out the answer, other wise we incriment d by 1, until the fucntion work.
+      We irretrate through all numbers of combinations of integers that could satisfy these conditions we set in the
+      while loop. then we move to c then loop again until a.
+
+      Issues and resolution: can not solve
+
+5. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+   some problems were hard. Next time I will be using piazza with the instructors alot to actaully solve the problems
+   insted of leaving it unsolved.

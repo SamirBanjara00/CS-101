@@ -1,0 +1,59 @@
+1. Enter the number of hours it took you to complete the project between
+   the <<< and >>> signs below (eg, <<<10>>>).
+
+   <<< 15 ish >>>
+   
+2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
+   between the <<< and >>> signs below (eg, <<<3>>>).
+
+   <<< 4 >>>
+
+3. Did you receive help from anyone? List their names, status (classmate, 
+   CS110 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+
+   ...                ...          ...
+
+4. Provide a short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Generating the Waltz)
+      Approach: Starting off this problem was very hard for me. Since we were not using command line arguments.
+      I was extremely confused as I don't think we had gone over how to do it. I actually stumbled upon the answer by l
+      looking back at the transpose.py to initialize the 2d array. So line 6 create a 2d array with 11 rows, and
+      16 columns. Then line 7 goes through 0 to 11 rows then we loop if for the columns using another for loop.
+      line 10 stores what ever is read using stdio.ReadInt() in [i][j]. So it stores the row and column 1, the row 0 and
+      column 1. Same applies for trio, just different variables. Now we have to roll die. We have 16 trials of die roll,
+      so we use a for function which has 2 random die rolls. Then we out up the row x column where row is the sum of
+      two die rolls. Same applies for trio.
+
+      Issues and resolution: ...
+
+   Problem 2 (Playing the Waltz)
+      Approach: Need to create list first, and make the list read the input provided by the generatewaltz.py file. I used
+      read all intf function to read all the integer of the generate file and placed 32 integers into the list. After
+      creating the list we need to ensure they meet our bounds and generate error messages according to the instruction
+      line 8 checks the integer i which is the length of the # of integers in list waltz. If it is less than 1 or
+      greater than 32 it will display message. For line 12, i didnt use len(waltz) because we can check if the
+      integers is between bounds, not the number of integers. line 16 sets bound to use if function for the integer
+      position in list between 15 and 31, because that is where the trio numbers start. We need to play the  sounds now.
+      So i used line 20,a for function, to play only trio numbers and only play minuet numbers. line 21 find the integer
+      position in list below 16, and line 24 finishes playing for integer in list above 15.
+
+      Issues and resolution: I had a hard time recalling the position of where minut ended adn trio ended to check if
+      they were between bound of 1 and 96. I had used 4 diffrent types of for loop to check if i within the 16 position
+      31st position in last waltz was between 1 and 96. For all I did was constraint the entire list to the bound of 1
+      and 96, so it would display the trio message. I finally used range within the list position of 16 and 32. I had
+      used waltz[16] and waltz[32] but i realized the list starts at 0. So I did 15 and 31. I had also only called the
+      play function 1 time for trio so, i was only getting half the sound. I shifted my play function within the for
+      loop and played it for both minuet and trio. I also had not used sys.exit as i dont think we went over it class.
+      I had to post a question on piazza for help.
+
+
+5. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+   ...
