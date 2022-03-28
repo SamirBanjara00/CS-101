@@ -2,35 +2,38 @@ import stdio
 import stdrandom
 import sys
 import math
-import random
-
-
 # Generates and returns the public/private keys as a tuple (n, e, d). Prime numbers p and q
 # needed to generate the keys are picked from the interval [lo, hi).
+
+
 def keygen(lo, hi):
     primes = []
     for i in range(lo, hi):
-        if _primes(i):
+        if _primes(0, i):
             primes += i
 
-    p0 = stdrandom.uniformInt(len(primes))
-    q0 = stdrandom.uniformInt(len(primes))
-    q = primes[q0]
-    p = primes[p0]
+    p0 = _sample(primes, int(len(primes)))
+    q0 = _sample(primes, int(len(primes)))
+    q = _choice(p0)
+    p = _choice(q0)
     n = p * q
     m = (p - 1) * (q - 1)
 
     while True:
-        e = stdrandom.uniformInt(2, m)
-        if _primes(e, hi) and e % m != 0:
-            break
-    d = 0.0
-    for i in range(1, m):
-        if (e * i) % m == 1:
-            d = i
-            break
+        e_prime_list = []
+        for i in range(2, m):
+            e = _choice(_sample(e_prime_list, int(len(e_prime_list))))
+            if _primes(e, hi) and e % m != 0:
+                e_prime_list += 1
+                e = _sample(e_prime_list, int(len(e_prime_list)))
+                break
+        d = 0.0
+        for i in range(1, m):
+            if (e * i) % m == 1:
+                d = i
+                break
 
-    return n, e, d
+        return n, e, d
 
 # Encrypts x (int) using the public key (n, e) and returns the encrypted value.
 
@@ -76,11 +79,12 @@ def _primes(lo, hi):
 
 
 # Returns a list containing a random sample (without replacement) of k items from the list-a.
+
+
 def _sample(a, k):
     b = []
     for v in a:
         b += [v]
-
     for i in range(1, int(len(a)) - 1):
         r = stdrandom.uniformInt(0, int(len(a)))
         temp = b[r]
